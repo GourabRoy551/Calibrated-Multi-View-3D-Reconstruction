@@ -1,0 +1,5 @@
+Intrinsic matrix used for Euclidean reconstruction (direct scaled portrait calibration)
+====================
+   1024.19441131    -9.30553704   512.03993728 
+      0.00000000  1021.97110998   726.45647911 
+      0.00000000     0.00000000     1.00000000 

@@ -1,0 +1,21 @@
+pair,reason,setup,keypoints_1,keypoints_2,raw_matches,H_inliers,H_inlier_ratio,H_residual,F_inliers,F_inlier_ratio,F_sampson_error,runtime_seconds,status
+View_01.jpeg vs View_02.jpeg,adjacent views,SIFT MATLAB default,2576,2579,779,356,0.456996148908858,0.5787385,555,0.712451861360719,0.1105651,1.3096508,homography and fundamental matrix ok
+View_01.jpeg vs View_02.jpeg,adjacent views,SIFT MATLAB strict,4071,3911,671,337,0.502235469448584,0.3439909,533,0.794336810730253,0.08757473,0.3305047,homography and fundamental matrix ok
+View_01.jpeg vs View_02.jpeg,adjacent views,SURF matchFeatures,865,869,254,91,0.358267716535433,0.7617661,155,0.610236220472441,0.1775923,0.2564886,homography and fundamental matrix ok
+View_01.jpeg vs View_02.jpeg,adjacent views,ORB matchFeatures,1500,1500,207,154,0.743961352657005,0.8086549,151,0.729468599033816,0.1266974,0.2245848,homography and fundamental matrix ok
+View_02.jpeg vs View_03.jpeg,adjacent views,SIFT MATLAB default,2579,2600,955,326,0.341361256544503,0.5005764,703,0.736125654450262,0.1104346,0.3903881,homography and fundamental matrix ok
+View_02.jpeg vs View_03.jpeg,adjacent views,SIFT MATLAB strict,3911,3069,1003,306,0.305084745762712,0.7093839,714,0.711864406779661,0.1832183,0.314383,homography and fundamental matrix ok
+View_02.jpeg vs View_03.jpeg,adjacent views,SURF matchFeatures,869,724,304,183,0.601973684210526,1.649812,185,0.608552631578947,0.3891579,0.1205828,homography and fundamental matrix ok
+View_02.jpeg vs View_03.jpeg,adjacent views,ORB matchFeatures,1500,1500,390,251,0.643589743589744,0.9900567,301,0.771794871794872,0.1391625,0.1015806,homography and fundamental matrix ok
+View_01.jpeg vs View_03.jpeg,medium baseline,SIFT MATLAB default,2576,2600,875,388,0.443428571428571,1.313458,625,0.714285714285714,0.1566984,0.2856333,homography and fundamental matrix ok
+View_01.jpeg vs View_03.jpeg,medium baseline,SIFT MATLAB strict,4071,3069,930,347,0.373118279569892,1.116479,638,0.686021505376344,0.2537378,0.3146507,homography and fundamental matrix ok
+View_01.jpeg vs View_03.jpeg,medium baseline,SURF matchFeatures,865,724,305,166,0.544262295081967,1.482885,208,0.681967213114754,0.4387326,0.1234046,homography and fundamental matrix ok
+View_01.jpeg vs View_03.jpeg,medium baseline,ORB matchFeatures,1500,1500,357,257,0.719887955182073,1.895629,284,0.795518207282913,0.1437048,0.090088,homography and fundamental matrix ok
+View_03.jpeg vs View_05.jpeg,medium/wide baseline,SIFT MATLAB default,2600,2699,678,283,0.41740412979351,0.4178012,437,0.644542772861357,0.07387286,0.2838289,homography and fundamental matrix ok
+View_03.jpeg vs View_05.jpeg,medium/wide baseline,SIFT MATLAB strict,3069,2801,548,264,0.481751824817518,0.3572139,462,0.843065693430657,0.07042676,0.2621527,homography and fundamental matrix ok
+View_03.jpeg vs View_05.jpeg,medium/wide baseline,SURF matchFeatures,724,765,149,54,0.36241610738255,0.871061,79,0.530201342281879,0.1692239,0.1304464,homography and fundamental matrix ok
+View_03.jpeg vs View_05.jpeg,medium/wide baseline,ORB matchFeatures,1500,1500,108,68,0.62962962962963,0.684173,89,0.824074074074074,0.1845647,0.0596905,homography and fundamental matrix ok
+View_01.jpeg vs View_05.jpeg,widest available baseline,SIFT MATLAB default,2576,2699,852,365,0.428403755868545,0.7506276,597,0.700704225352113,0.08356578,0.2806596,homography and fundamental matrix ok
+View_01.jpeg vs View_05.jpeg,widest available baseline,SIFT MATLAB strict,4071,2801,851,349,0.410105757931845,0.5283347,620,0.72855464159812,0.1512966,0.2966773,homography and fundamental matrix ok
+View_01.jpeg vs View_05.jpeg,widest available baseline,SURF matchFeatures,865,765,227,94,0.414096916299559,1.7471,121,0.533039647577093,0.1857531,0.1186801,homography and fundamental matrix ok
+View_01.jpeg vs View_05.jpeg,widest available baseline,ORB matchFeatures,1500,1500,198,92,0.464646464646465,1.0805,149,0.752525252525252,0.1577026,0.0650368,homography and fundamental matrix ok
