@@ -4,8 +4,6 @@ Camera calibration, feature matching, panorama estimation, epipolar-geometry val
 
 This project is a complete MATLAB pipeline for recovering 3D scene structure from multiple moving-camera views. It starts with camera calibration from planar patterns, evaluates local feature matching across real scene images, estimates two-view geometry with RANSAC, and finishes with a multi-view sparse point-cloud reconstruction.
 
-The work was originally developed for a 3D Vision for Multiple and Moving Cameras lab, then reorganized as a portfolio-ready project with reproducible entrypoints, saved metrics, visual results, report assets, and clear documentation.
-
 ## Table Of Contents
 
 - [Overview](#overview)
