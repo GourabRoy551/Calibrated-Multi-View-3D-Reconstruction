@@ -924,7 +924,8 @@ yields a metrically valid reconstruction.
 Figure~\ref{fig:sec3_cloud_cam} shows the reconstructed point cloud with the estimated
 camera positions from two viewpoints.
 Figures~\ref{fig:sec3_scene} and~\ref{fig:sec3_colored} show the scene-only cloud and
-a colour-mapped version.  The interactive MATLAB figures were saved as
+an RGB-painted improved point cloud, where each 3D point is coloured from its
+reference-view pixel.  The interactive MATLAB figures were saved as
 \path{results/section_3/cloud_with_cameras.fig} and
 \path{results/section_3/cloud_scene_only.fig}.
 
@@ -951,7 +952,7 @@ a colour-mapped version.  The interactive MATLAB figures were saved as
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.80\textwidth]{section_3/colored_cloud.png}
-    \caption{Colour-mapped Euclidean point cloud.}
+    \caption{RGB-painted improved Euclidean point cloud.}
     \label{fig:sec3_colored}
 \end{figure}
 
