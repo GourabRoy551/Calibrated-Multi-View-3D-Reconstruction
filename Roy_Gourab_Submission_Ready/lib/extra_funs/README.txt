@@ -1,1 +1,0 @@
-functions from the toolbox of "Master Vision Artificial" (UCM)

@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 \usepackage{graphicx}
@@ -35,14 +35,12 @@
 
     \vspace{2.3cm}
 
-    {\Large Gourab Roy}
+    {\Large Gourab Roy}\\[0.2cm]
+    {\large gourab.roy@estudiante.uam.es}
 \end{center}
 \end{titlepage}
 \hypersetup{pageanchor=true}
 \pagenumbering{arabic}
-
-\tableofcontents
-\clearpage
 
 % ============================================================
 \section{Obtention of the Intrinsic Parameters of a Camera}
@@ -611,53 +609,46 @@ Figure~\ref{fig:section2_best_matches} shows the inlier correspondences.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=0.86\textwidth]{section_2/best_matches.png}
+    \includegraphics[width=0.55\textwidth]{section_2/best_matches.png}
     \caption{Fundamental matrix inlier correspondences for the best combination
-             (View\_02 vs View\_03, SIFT MATLAB strict).
-             Green circles: keypoints in View\_02;
-             red crosses: matched keypoints in View\_03.}
+             (View\_02 vs View\_03, SIFT MATLAB strict).}
     \label{fig:section2_best_matches}
 \end{figure}
 
-\subsubsection*{Homography, fundamental matrix, and geometric verification}
+The estimated homography and fundamental matrix for View\_02 to View\_03 are:
 
-The homography from View\_02 to View\_03 is:
-
+{\small
 \begin{equation}
-\mathbf{H} =
+\begin{aligned}
+\mathbf{H} &=
 \begin{bmatrix}
  1.288474 & -0.052662 & -49.841671 \\
  0.153312 &  0.769757 & 380.728394 \\
  0.000446 & -0.000249 &   1.000000
-\end{bmatrix}
-\label{eq:sec2_H}
-\end{equation}
-
-The estimated fundamental matrix ($\mathbf{F}$ rank-2, unit Frobenius norm) is:
-
-\begin{equation}
-\mathbf{F} =
+\end{bmatrix},
+&
+\mathbf{F} &=
 \begin{bmatrix}
  0.000000 &  0.000001 &  0.000183 \\
 -0.000001 &  0.000000 & -0.002453 \\
  0.000032 &  0.001922 &  0.999995
-\end{bmatrix}
-\label{eq:sec2_F}
+\end{bmatrix}.
+\end{aligned}
+\label{eq:sec2_HF}
 \end{equation}
+}
 
-Figure~\ref{fig:sec2_pano_vgg} shows the panorama obtained with $\mathbf{H}$
-and the \texttt{vgg\_gui\_F.m} screenshot used to inspect the epipolar geometry.
+Figure~\ref{fig:sec2_pano_vgg} shows the panorama obtained with $\mathbf{H}$ and
+the \texttt{vgg\_gui\_F.m} screenshot used to inspect the epipolar geometry.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[height=0.30\textheight]{section_2/best_panorama.png}
+    \includegraphics[height=0.17\textheight]{section_2/best_panorama.png}
     \hfill
-    \includegraphics[height=0.30\textheight]{section_2/vgg_gui_F_best_pair_screenshot.png}
-    \caption{Left: panorama warping View\_02 onto View\_03 via $\mathbf{H}$
-             (Eq.~\eqref{eq:sec2_H}).
-             Right: \texttt{vgg\_gui\_F.m} GUI -- a selected point in the left image
-             generates its epipolar line in the right image, confirming
-             $\mathbf{F}$ quality (Eq.~\eqref{eq:sec2_F}).}
+    \includegraphics[height=0.17\textheight]{section_2/vgg_gui_F_best_pair_screenshot.png}
+    \caption{Left: panorama from $\mathbf{H}$.
+             Right: \texttt{vgg\_gui\_F.m} screenshot confirming the estimated
+             epipolar geometry from $\mathbf{F}$.}
     \label{fig:sec2_pano_vgg}
 \end{figure}
 
@@ -739,6 +730,8 @@ kept as multi-view tracks.  Of the initial detections, 672 tracks survived this
 filtering stage.  The mean visibility of $3.107$ views per track indicates that
 most 3D points are visible in three or more images, providing good redundancy
 for reconstruction.
+
+\clearpage
 
 % ------------------------------------------------------------
 \subsection{Initial Two-Camera Projective Reconstruction}
@@ -959,19 +952,22 @@ reference-view pixel.  The interactive MATLAB figures were saved as
 \clearpage
 \section{Conclusion}
 
-This lab evaluation completed the full calibrated multi-view reconstruction workflow.
-In Section~1, the screen-checkerboard calibration produced the most reliable intrinsic
-matrix because it used denser and more precise point measurements than the custom
-floor-tile pattern. Section~2 then used the scaled intrinsic matrix and compared several
-feature-matching configurations, selecting the SIFT MATLAB strict setup on
-View\_02--View\_03 because it gave the strongest fundamental-matrix support.
+In this work, I completed the full process from camera calibration to 3D reconstruction.
+From Section~1, I found that the screen-checkerboard calibration was the better choice
+for the rest of the project because it used more points and gave more stable intrinsic
+parameters than the manually clicked floor-tile pattern. This calibration was then scaled
+and reused for the scene images in Sections~2 and~3.
 
-Section~3 used the selected feature strategy to build 672 multi-view tracks, recover an
-initial projective reconstruction, add all five cameras through resectioning, and validate
-the reconstruction with projective bundle adjustment. The final Euclidean upgrade
-produced a metric point cloud with all five cameras valid and a mean reprojection error
-of $4.465095\,\mathrm{px}$. Overall, the results are coherent with the LabFinal
-requirements and demonstrate the complete transition from camera calibration to local
-matching and final 3D reconstruction.
+In Section~2, I compared several feature matching options and selected the SIFT MATLAB
+strict setup on View\_02--View\_03 because it gave the strongest support for the
+fundamental matrix. In Section~3, this choice produced 672 multi-view tracks and allowed
+the scene to be reconstructed using all five views. The final Euclidean reconstruction
+gave a mean reprojection error of $4.465095\,\mathrm{px}$. Overall, the results are
+consistent with the expected pipeline: calibration, matching, projective reconstruction,
+and finally a Euclidean 3D point cloud.
+
+\section*{Acknowledgement}
+
+I used LLM assistance for structuring the code and for improving the grammar and clarity of the writing in the report.
 
 \end{document}
